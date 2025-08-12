@@ -15,14 +15,16 @@ $users = mysqli_query($conn, "SELECT * FROM users");
     <title>Admin Panel - Jurnal Kebiasaan Anak Sehat</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="light" style="background:url('https://i.ibb.co.com/Q3dpY15c/animegirl-mu.png') center/cover no-repeat fixed, linear-gradient(135deg, #e3f2fd 0%, #fff 100%);min-height:100vh;">
+<body class="light bg-main">
 <div class="container">
     <img src="https://i.ibb.co.com/4wgzqjLh/SMP-Muh-logo-removebg-preview.png" alt="Logo" class="logo">
-    <h2 style="color:#1976d2;">Panel Admin</h2>
-    <a href="logout.php" style="float:right;color:#d32f2f;font-weight:500;">Logout</a>
-    <div style="margin-bottom:24px;margin-top:8px;padding:18px 16px;background:#e3f2fd;border-radius:12px;box-shadow:0 2px 8px #90caf9;">
-        <h3 style="color:#1565c0;margin-bottom:12px;">Buat Akun Baru</h3>
-        <form method="post" action="buat_akun.php" style="text-align:left;">
+    <div class="flex-header">
+        <h2 class="heading-main">Panel Admin</h2>
+        <a href="logout.php" class="btn-logout">Logout</a>
+    </div>
+    <div class="card">
+        <h3 class="heading-sub">Buat Akun Baru</h3>
+        <form method="post" action="buat_akun.php" class="form-akun">
             <label>Username:</label>
             <input type="text" name="username" placeholder="Username" required>
             <label>Nama:</label>
@@ -44,12 +46,12 @@ $users = mysqli_query($conn, "SELECT * FROM users");
             </select>
             <label>Password:</label>
             <input type="text" name="password" placeholder="Password" required>
-            <button type="submit">Buat Akun</button>
+            <button type="submit" class="btn-main">Buat Akun</button>
         </form>
     </div>
-    <h3 style="color:#1565c0;margin-bottom:12px;">Daftar Akun</h3>
-    <form method="post" action="export_users_excel.php" style="margin-bottom:12px;"><button type="submit">Export ke Excel</button></form>
-    <div style="overflow-x:auto;">
+    <h3 class="heading-sub">Daftar Akun</h3>
+    <form method="post" action="export_users_excel.php" class="form-export"><button type="submit" class="btn-main">Export ke Excel</button></form>
+    <div class="table-responsive">
     <table>
         <tr><th>Username</th><th>Nama</th><th>Kelas</th><th>Role</th><th>Password</th><th>Aksi</th></tr>
         <?php while($u = mysqli_fetch_assoc($users)): ?>
@@ -60,14 +62,14 @@ $users = mysqli_query($conn, "SELECT * FROM users");
             <td><?= htmlspecialchars($u['role']) ?></td>
             <td><?= $u['password'] ?></td>
             <td>
-                <a href="edit_akun.php?id=<?= $u['id'] ?>" style="color:#1976d2;font-weight:500;">Edit</a> |
-                <a href="delete_akun.php?id=<?= $u['id'] ?>" style="color:#d32f2f;font-weight:500;" onclick="return confirm('Yakin hapus akun ini?');">Delete</a>
+                <a href="edit_akun.php?id=<?= $u['id'] ?>" class="link-edit">Edit</a> |
+                <a href="delete_akun.php?id=<?= $u['id'] ?>" class="link-delete" onclick="return confirm('Yakin hapus akun ini?');">Delete</a>
             </td>
         </tr>
         <?php endwhile; ?>
     </table>
     </div>
-    <p>Copyright &copy; 2025 <a href="https://github.com/rahman-wardantz">rahman-wardantz</a></p>
+    <p class="copyright">Copyright &copy; 2025 <a href="https://github.com/rahman-wardantz">rahman-wardantz</a></p>
 </div>
 </body>
 </html>

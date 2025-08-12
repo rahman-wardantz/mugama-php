@@ -20,16 +20,16 @@ $isi = mysqli_fetch_assoc($cek);
     <title>Jurnal Harian Siswa</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="light" style="background:url('https://i.ibb.co.com/Q3dpY15c/animegirl-mu.png') center/cover no-repeat fixed, linear-gradient(135deg, #e3f2fd 0%, #fff 100%);min-height:100vh;">
+<body class="light bg-main">
 <div class="container">
     <img src="https://i.ibb.co.com/4wgzqjLh/SMP-Muh-logo-removebg-preview.png" alt="Logo" class="logo">
-    <h2 style="color:#1976d2;">Jurnal Harian Siswa</h2>
-    <p style="margin-bottom:2px;">Senin, <?= date('d F Y') ?></p>
-    <p style="margin-bottom:10px;">Halo, <b><?= htmlspecialchars($nama) ?></b> Kelas <b><?= htmlspecialchars($kelas) ?></b> | <a href="logout.php" style="color:#d32f2f;font-weight:500;">Logout</a></p>
-    <a href="riwayat_jurnal.php" style="display:inline-block;margin-bottom:18px;color:#1976d2;font-weight:500;">Lihat Riwayat</a>
+    <h2 class="heading-main">Jurnal Harian Siswa</h2>
+    <p class="date-info">Senin, <?= date('d F Y') ?></p>
+    <p class="user-info">Halo, <b><?= htmlspecialchars($nama) ?></b> Kelas <b><?= htmlspecialchars($kelas) ?></b> | <a href="logout.php" class="btn-logout">Logout</a></p>
+    <a href="riwayat_jurnal.php" class="link-main">Lihat Riwayat</a>
     <?php if(!$isi): ?>
-    <div style="background:#e3f2fd;padding:18px 16px;border-radius:12px;box-shadow:0 2px 8px #90caf9;">
-    <form method="post" action="isi_jurnal.php" style="text-align:left;">
+    <div class="card">
+    <form method="post" action="isi_jurnal.php" class="form-jurnal">
         <label>Jam Subuh:</label>
         <input type="time" name="jam_subuh">
         <label>Jam Ibadah:</label>
@@ -45,7 +45,7 @@ $isi = mysqli_fetch_assoc($cek);
         <label>Jam Tidur Cepat:</label>
         <input type="time" name="jam_tidur_cepat">
         <label>Checklist Sholat:</label>
-        <div style="display:flex;gap:10px;margin-bottom:10px;flex-wrap:wrap;">
+        <div class="checklist-sholat">
             <label><input type="checkbox" name="sholat_subuh" value="1"> Subuh</label>
             <label><input type="checkbox" name="sholat_duhur" value="1"> Duhur</label>
             <label><input type="checkbox" name="sholat_ashar" value="1"> Ashar</label>
@@ -55,14 +55,14 @@ $isi = mysqli_fetch_assoc($cek);
         <label>Nama Kegiatan Bermasyarakat:</label>
         <input type="text" name="kegiatan_bermasyarakat" placeholder="Contoh: Kerja bakti lingkungan">
         <label>Deskripsi Kegiatan:</label>
-        <textarea name="deskripsi" rows="3" style="width:96%;border-radius:8px;border:1.5px solid #90caf9;background:#f5faff;padding:8px;"></textarea>
-        <button type="submit">Simpan Jurnal</button>
+        <textarea name="deskripsi" rows="3" class="textarea-main"></textarea>
+        <button type="submit" class="btn-main">Simpan Jurnal</button>
     </form>
     </div>
     <?php else: ?>
     <p class="alert success">Jurnal hari ini sudah diisi.</p>
     <?php endif; ?>
-    <p>Copyright &copy; 2025 <a href="https://github.com/rahman-wardantz">rahman-wardantz</a></p>
+    <p class="copyright">Copyright &copy; 2025 <a href="https://github.com/rahman-wardantz">rahman-wardantz</a></p>
 </div>
 </body>
 </html>

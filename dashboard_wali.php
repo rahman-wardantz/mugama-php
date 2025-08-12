@@ -15,15 +15,17 @@ $jurnal = mysqli_query($conn, "SELECT j.*, u.nama, u.kelas FROM jurnal j JOIN us
     <title>Panel Wali Kelas - Jurnal Kebiasaan Anak Sehat</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="light" style="background:url('https://i.ibb.co.com/Q3dpY15c/animegirl-mu.png') center/cover no-repeat fixed, linear-gradient(135deg, #e3f2fd 0%, #fff 100%);min-height:100vh;">
+<body class="light bg-main">
 <div class="container">
     <img src="https://i.ibb.co.com/4wgzqjLh/SMP-Muh-logo-removebg-preview.png" alt="Logo" class="logo">
-    <h2 style="color:#1976d2;">Panel Wali Kelas</h2>
-    <a href="logout.php" style="float:right;color:#d32f2f;font-weight:500;">Logout</a>
-    <form method="post" action="export_jurnal_excel.php" style="margin-bottom:12px;"><button type="submit">Export Rekap ke Excel</button></form>
-    <div style="background:#e3f2fd;padding:18px 16px;border-radius:12px;box-shadow:0 2px 8px #90caf9;margin-bottom:18px;">
-        <h3 style="color:#1565c0;margin-bottom:12px;">Rekap Jurnal Harian Siswa</h3>
-        <div style="overflow-x:auto;">
+    <div class="flex-header">
+        <h2 class="heading-main">Panel Wali Kelas</h2>
+        <a href="logout.php" class="btn-logout">Logout</a>
+    </div>
+    <form method="post" action="export_jurnal_excel.php" class="form-export"><button type="submit" class="btn-main">Export Rekap ke Excel</button></form>
+    <div class="card">
+        <h3 class="heading-sub">Rekap Jurnal Harian Siswa</h3>
+        <div class="table-responsive">
         <table>
             <thead>
             <tr>
@@ -60,7 +62,7 @@ $jurnal = mysqli_query($conn, "SELECT j.*, u.nama, u.kelas FROM jurnal j JOIN us
         </table>
         </div>
     </div>
-    <p>Copyright &copy; 2025 <a href="https://github.com/rahman-wardantz">rahman-wardantz</a></p>
+    <p class="copyright">Copyright &copy; 2025 <a href="https://github.com/rahman-wardantz">rahman-wardantz</a></p>
 </div>
 </body>
 </html>
