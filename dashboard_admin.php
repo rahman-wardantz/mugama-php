@@ -42,7 +42,7 @@ $users = mysqli_query($conn, "SELECT * FROM users");
     <h3>Daftar Akun</h3>
     <form method="post" action="export_users_excel.php"><button type="submit">Export ke Excel</button></form>
     <table border="1" width="100%">
-        <tr><th>Username</th><th>Nama</th><th>Kelas</th><th>Role</th><th>Password</th></tr>
+        <tr><th>Username</th><th>Nama</th><th>Kelas</th><th>Role</th><th>Password</th><th>Aksi</th></tr>
         <?php while($u = mysqli_fetch_assoc($users)): ?>
         <tr>
             <td><?= htmlspecialchars($u['username']) ?></td>
@@ -50,6 +50,10 @@ $users = mysqli_query($conn, "SELECT * FROM users");
             <td><?= htmlspecialchars($u['kelas']) ?></td>
             <td><?= htmlspecialchars($u['role']) ?></td>
             <td><?= $u['password'] ?></td>
+            <td>
+                <a href="edit_akun.php?id=<?= $u['id'] ?>" style="color:#1976d2;font-weight:500;">Edit</a> |
+                <a href="delete_akun.php?id=<?= $u['id'] ?>" style="color:#d32f2f;font-weight:500;" onclick="return confirm('Yakin hapus akun ini?');">Delete</a>
+            </td>
         </tr>
         <?php endwhile; ?>
     </table>
