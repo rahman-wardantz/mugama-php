@@ -16,26 +16,30 @@ $jurnal = mysqli_query($conn, "SELECT * FROM jurnal WHERE siswa_id=$siswa_id ORD
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="light">
-<div class="container">
-    <h2>Riwayat Jurnal Siswa</h2>
-    <a href="dashboard_siswa.php">Kembali</a>
-    <table border="1" width="100%">
-        <tr><th>Tanggal</th><th>Subuh</th><th>Duhur</th><th>Ashar</th><th>Maghrib</th><th>Isyak</th><th>Kegiatan Bermasyarakat</th><th>Jam Bermasyarakat</th><th>Deskripsi</th></tr>
-        <?php while($j = mysqli_fetch_assoc($jurnal)): ?>
-        <tr>
-            <td><?= htmlspecialchars($j['tanggal']) ?></td>
-            <td><?= $j['sholat_subuh'] ? '✔️' : '❌' ?></td>
-            <td><?= $j['sholat_duhur'] ? '✔️' : '❌' ?></td>
-            <td><?= $j['sholat_ashar'] ? '✔️' : '❌' ?></td>
-            <td><?= $j['sholat_maghrib'] ? '✔️' : '❌' ?></td>
-            <td><?= $j['sholat_isyak'] ? '✔️' : '❌' ?></td>
-            <td><?= htmlspecialchars($j['kegiatan_bermasyarakat']) ?></td>
-            <td><?= htmlspecialchars($j['jam_bermasyarakat']) ?></td>
-            <td><?= htmlspecialchars($j['deskripsi']) ?></td>
-        </tr>
-        <?php endwhile; ?>
-    </table>
-    <p>Copyright &copy; 2025 <a href="https://github.com/rahman-wardantz">rahman-wardantz</a></p>
+<div class="container" style="max-width:900px;">
+    <h2 style="color:#1976d2;">Riwayat Jurnal Siswa</h2>
+    <a href="dashboard_siswa.php" style="color:#1976d2;font-weight:500;">&larr; Kembali</a>
+    <div style="background:#e3f2fd;padding:18px 16px;border-radius:12px;box-shadow:0 2px 8px #90caf9;margin-bottom:18px;">
+        <div style="overflow-x:auto;">
+        <table>
+            <tr><th>Tanggal</th><th>Subuh</th><th>Duhur</th><th>Ashar</th><th>Maghrib</th><th>Isyak</th><th>Kegiatan Bermasyarakat</th><th>Jam Bermasyarakat</th><th>Deskripsi</th></tr>
+            <?php while($j = mysqli_fetch_assoc($jurnal)): ?>
+            <tr>
+                <td><?= htmlspecialchars($j['tanggal']) ?></td>
+                <td><?= $j['sholat_subuh'] ? '✔️' : '❌' ?></td>
+                <td><?= $j['sholat_duhur'] ? '✔️' : '❌' ?></td>
+                <td><?= $j['sholat_ashar'] ? '✔️' : '❌' ?></td>
+                <td><?= $j['sholat_maghrib'] ? '✔️' : '❌' ?></td>
+                <td><?= $j['sholat_isyak'] ? '✔️' : '❌' ?></td>
+                <td><?= htmlspecialchars($j['kegiatan_bermasyarakat']) ?></td>
+                <td><?= htmlspecialchars($j['jam_bermasyarakat']) ?></td>
+                <td><?= htmlspecialchars($j['deskripsi']) ?></td>
+            </tr>
+            <?php endwhile; ?>
+        </table>
+        </div>
+    </div>
+    <p style="margin-top:8px;font-size:0.98rem;color:#444;">Copyright &copy; 2025 <a href="https://github.com/rahman-wardantz" style="color:#1976d2;">rahman-wardantz</a></p>
 </div>
 </body>
 </html>

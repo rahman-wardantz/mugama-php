@@ -21,12 +21,13 @@ $isi = mysqli_fetch_assoc($cek);
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="light">
-<div class="container">
-    <h2>Jurnal Harian Siswa</h2>
-    <p>Senin, <?= date('d F Y') ?></p>
-    <p>Halo, <?= htmlspecialchars($nama) ?> Kelas <?= htmlspecialchars($kelas) ?> | <a href="logout.php">Logout</a></p>
-    <a href="riwayat_jurnal.php">Lihat Riwayat</a>
+<div class="container" style="max-width:480px;">
+    <h2 style="color:#1976d2;">Jurnal Harian Siswa</h2>
+    <p style="margin-bottom:2px;">Senin, <?= date('d F Y') ?></p>
+    <p style="margin-bottom:10px;">Halo, <b><?= htmlspecialchars($nama) ?></b> Kelas <b><?= htmlspecialchars($kelas) ?></b> | <a href="logout.php" style="color:#d32f2f;font-weight:500;">Logout</a></p>
+    <a href="riwayat_jurnal.php" style="display:inline-block;margin-bottom:18px;color:#1976d2;font-weight:500;">Lihat Riwayat</a>
     <?php if(!$isi): ?>
+    <div style="background:#e3f2fd;padding:18px 16px;border-radius:12px;box-shadow:0 2px 8px #90caf9;">
     <form method="post" action="isi_jurnal.php" style="text-align:left;">
         <label>Jam Subuh:</label>
         <input type="time" name="jam_subuh">
@@ -43,7 +44,7 @@ $isi = mysqli_fetch_assoc($cek);
         <label>Jam Tidur Cepat:</label>
         <input type="time" name="jam_tidur_cepat">
         <label>Checklist Sholat:</label>
-        <div style="display:flex;gap:10px;margin-bottom:10px;">
+        <div style="display:flex;gap:10px;margin-bottom:10px;flex-wrap:wrap;">
             <label><input type="checkbox" name="sholat_subuh" value="1"> Subuh</label>
             <label><input type="checkbox" name="sholat_duhur" value="1"> Duhur</label>
             <label><input type="checkbox" name="sholat_ashar" value="1"> Ashar</label>
@@ -56,8 +57,9 @@ $isi = mysqli_fetch_assoc($cek);
         <textarea name="deskripsi" rows="3" style="width:96%;border-radius:8px;border:1.5px solid #90caf9;background:#f5faff;padding:8px;"></textarea>
         <button type="submit">Simpan Jurnal</button>
     </form>
+    </div>
     <?php else: ?>
-    <p>Jurnal hari ini sudah diisi.</p>
+    <p class="alert success">Jurnal hari ini sudah diisi.</p>
     <?php endif; ?>
     <p>Copyright &copy; 2025 <a href="https://github.com/rahman-wardantz">rahman-wardantz</a></p>
 </div>

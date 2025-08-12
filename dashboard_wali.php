@@ -16,46 +16,48 @@ $jurnal = mysqli_query($conn, "SELECT j.*, u.nama, u.kelas FROM jurnal j JOIN us
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="light">
-<div class="container">
-    <h2>Panel Wali Kelas</h2>
-    <a href="logout.php">Logout</a>
-    <form method="post" action="export_jurnal_excel.php"><button type="submit">Export Rekap ke Excel</button></form>
-    <h3>Rekap Jurnal Harian Siswa</h3>
-    <div style="overflow-x:auto;">
-    <table style="width:100%;border-collapse:collapse;background:#f5faff;box-shadow:0 2px 8px #90caf9;">
-        <thead style="background:#1976d2;color:#fff;">
-        <tr>
-            <th style="padding:8px;">Tanggal</th>
-            <th>Nama</th>
-            <th>Kelas</th>
-            <th>Subuh</th>
-            <th>Duhur</th>
-            <th>Ashar</th>
-            <th>Maghrib</th>
-            <th>Isyak</th>
-            <th>Kegiatan Bermasyarakat</th>
-            <th>Jam Bermasyarakat</th>
-            <th>Deskripsi</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php while($j = mysqli_fetch_assoc($jurnal)): ?>
-        <tr style="border-bottom:1px solid #90caf9;">
-            <td style="padding:8px;"><?= htmlspecialchars($j['tanggal']) ?></td>
-            <td><?= htmlspecialchars($j['nama']) ?></td>
-            <td><?= htmlspecialchars($j['kelas']) ?></td>
-            <td><?= $j['sholat_subuh'] ? '✔️' : '❌' ?></td>
-            <td><?= $j['sholat_duhur'] ? '✔️' : '❌' ?></td>
-            <td><?= $j['sholat_ashar'] ? '✔️' : '❌' ?></td>
-            <td><?= $j['sholat_maghrib'] ? '✔️' : '❌' ?></td>
-            <td><?= $j['sholat_isyak'] ? '✔️' : '❌' ?></td>
-            <td><?= htmlspecialchars($j['kegiatan_bermasyarakat']) ?></td>
-            <td><?= htmlspecialchars($j['jam_bermasyarakat']) ?></td>
-            <td><?= htmlspecialchars($j['deskripsi']) ?></td>
-        </tr>
-        <?php endwhile; ?>
-        </tbody>
-    </table>
+<div class="container" style="max-width:900px;">
+    <h2 style="color:#1976d2;">Panel Wali Kelas</h2>
+    <a href="logout.php" style="float:right;color:#d32f2f;font-weight:500;">Logout</a>
+    <form method="post" action="export_jurnal_excel.php" style="margin-bottom:12px;"><button type="submit">Export Rekap ke Excel</button></form>
+    <div style="background:#e3f2fd;padding:18px 16px;border-radius:12px;box-shadow:0 2px 8px #90caf9;margin-bottom:18px;">
+        <h3 style="color:#1565c0;margin-bottom:12px;">Rekap Jurnal Harian Siswa</h3>
+        <div style="overflow-x:auto;">
+        <table>
+            <thead>
+            <tr>
+                <th>Tanggal</th>
+                <th>Nama</th>
+                <th>Kelas</th>
+                <th>Subuh</th>
+                <th>Duhur</th>
+                <th>Ashar</th>
+                <th>Maghrib</th>
+                <th>Isyak</th>
+                <th>Kegiatan Bermasyarakat</th>
+                <th>Jam Bermasyarakat</th>
+                <th>Deskripsi</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php while($j = mysqli_fetch_assoc($jurnal)): ?>
+            <tr>
+                <td><?= htmlspecialchars($j['tanggal']) ?></td>
+                <td><?= htmlspecialchars($j['nama']) ?></td>
+                <td><?= htmlspecialchars($j['kelas']) ?></td>
+                <td><?= $j['sholat_subuh'] ? '✔️' : '❌' ?></td>
+                <td><?= $j['sholat_duhur'] ? '✔️' : '❌' ?></td>
+                <td><?= $j['sholat_ashar'] ? '✔️' : '❌' ?></td>
+                <td><?= $j['sholat_maghrib'] ? '✔️' : '❌' ?></td>
+                <td><?= $j['sholat_isyak'] ? '✔️' : '❌' ?></td>
+                <td><?= htmlspecialchars($j['kegiatan_bermasyarakat']) ?></td>
+                <td><?= htmlspecialchars($j['jam_bermasyarakat']) ?></td>
+                <td><?= htmlspecialchars($j['deskripsi']) ?></td>
+            </tr>
+            <?php endwhile; ?>
+            </tbody>
+        </table>
+        </div>
     </div>
     <p>Copyright &copy; 2025 <a href="https://github.com/rahman-wardantz">rahman-wardantz</a></p>
 </div>

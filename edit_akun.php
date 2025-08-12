@@ -27,9 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="light">
-<div class="container">
-    <h2>Edit Akun</h2>
-    <form method="post">
+<div class="container" style="max-width:440px;">
+    <h2 style="color:#1976d2;">Edit Akun</h2>
+    <div style="background:#e3f2fd;padding:18px 16px;border-radius:12px;box-shadow:0 2px 8px #90caf9;">
+    <form method="post" style="text-align:left;">
         <label>Username:</label>
         <input type="text" name="username" value="<?= htmlspecialchars($u['username']) ?>" required>
         <label>Nama:</label>
@@ -53,8 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" name="password" value="<?= htmlspecialchars($u['password']) ?>" required>
         <button type="submit">Simpan Perubahan</button>
     </form>
-    <p><a href="dashboard_admin.php">Kembali</a></p>
-    <p>Copyright &copy; 2025 <a href="https://github.com/rahman-wardantz">rahman-wardantz</a></p>
+    </div>
+    <p style="margin-top:18px;"><a href="dashboard_admin.php" style="color:#1976d2;font-weight:500;">&larr; Kembali</a></p>
+    <p style="margin-top:8px;font-size:0.98rem;color:#444;">Copyright &copy; 2025 <a href="https://github.com/rahman-wardantz" style="color:#1976d2;">rahman-wardantz</a></p>
 </div>
 </body>
 </html>
