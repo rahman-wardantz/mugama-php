@@ -13,7 +13,7 @@ $users = mysqli_query($conn, "SELECT * FROM users");
 <head>
     <meta charset="UTF-8">
     <title>Admin Panel - Jurnal Kebiasaan Anak Sehat</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="light bg-main">
 <div class="container">

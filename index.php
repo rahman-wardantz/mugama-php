@@ -13,7 +13,7 @@ if(isset($_SESSION['role'])) {
 <head>
     <meta charset="UTF-8">
     <title>Jurnal Kebiasaan Anak Sehat</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="https://i.ibb.co.com/4wgzqjLh/SMP-Muh-logo-removebg-preview.png">
 </head>
 <body class="light bg-main">

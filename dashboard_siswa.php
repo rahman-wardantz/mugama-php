@@ -18,7 +18,7 @@ $isi = mysqli_fetch_assoc($cek);
 <head>
     <meta charset="UTF-8">
     <title>Jurnal Harian Siswa</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="light bg-main">
 <div class="container">

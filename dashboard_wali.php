@@ -13,7 +13,7 @@ $jurnal = mysqli_query($conn, "SELECT j.*, u.nama, u.kelas FROM jurnal j JOIN us
 <head>
     <meta charset="UTF-8">
     <title>Panel Wali Kelas - Jurnal Kebiasaan Anak Sehat</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="light bg-main">
 <div class="container">
