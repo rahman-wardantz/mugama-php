@@ -1,0 +1,65 @@
+<?php
+// Copyright (c) 2025 github.com/rahman-wardantz
+session_start();
+require 'config.php';
+if (!isset($_SESSION['role']) || $_SESSION['role'] != 'siswa') {
+    header('Location: index.php'); exit;
+}
+$siswa_id = $_SESSION['user_id'];
+$nama = $_SESSION['nama'];
+$kelas = $_SESSION['kelas'];
+$tanggal = date('Y-m-d');
+// Cek apakah sudah isi jurnal hari ini
+$cek = mysqli_query($conn, "SELECT * FROM jurnal WHERE siswa_id=$siswa_id AND tanggal='$tanggal'");
+$isi = mysqli_fetch_assoc($cek);
+?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Jurnal Harian Siswa</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="light">
+<div class="container">
+    <h2>Jurnal Harian Siswa</h2>
+    <p>Senin, <?= date('d F Y') ?></p>
+    <p>Halo, <?= htmlspecialchars($nama) ?> Kelas <?= htmlspecialchars($kelas) ?> | <a href="logout.php">Logout</a></p>
+    <a href="riwayat_jurnal.php">Lihat Riwayat</a>
+    <?php if(!$isi): ?>
+    <form method="post" action="isi_jurnal.php" style="text-align:left;">
+        <label>Jam Subuh:</label>
+        <input type="time" name="jam_subuh">
+        <label>Jam Ibadah:</label>
+        <input type="time" name="jam_ibadah">
+        <label>Jam Olahraga:</label>
+        <input type="time" name="jam_olahraga">
+        <label>Jam Makan Sehat:</label>
+        <input type="time" name="jam_makan_sehat">
+        <label>Jam Belajar:</label>
+        <input type="time" name="jam_belajar">
+        <label>Jam Bermasyarakat:</label>
+        <input type="time" name="jam_bermasyarakat">
+        <label>Jam Tidur Cepat:</label>
+        <input type="time" name="jam_tidur_cepat">
+        <label>Checklist Sholat:</label>
+        <div style="display:flex;gap:10px;margin-bottom:10px;">
+            <label><input type="checkbox" name="sholat_subuh" value="1"> Subuh</label>
+            <label><input type="checkbox" name="sholat_duhur" value="1"> Duhur</label>
+            <label><input type="checkbox" name="sholat_ashar" value="1"> Ashar</label>
+            <label><input type="checkbox" name="sholat_maghrib" value="1"> Maghrib</label>
+            <label><input type="checkbox" name="sholat_isyak" value="1"> Isyak</label>
+        </div>
+        <label>Nama Kegiatan Bermasyarakat:</label>
+        <input type="text" name="kegiatan_bermasyarakat" placeholder="Contoh: Kerja bakti lingkungan">
+        <label>Deskripsi Kegiatan:</label>
+        <textarea name="deskripsi" rows="3" style="width:96%;border-radius:8px;border:1.5px solid #90caf9;background:#f5faff;padding:8px;"></textarea>
+        <button type="submit">Simpan Jurnal</button>
+    </form>
+    <?php else: ?>
+    <p>Jurnal hari ini sudah diisi.</p>
+    <?php endif; ?>
+    <p>Copyright &copy; 2025 <a href="https://github.com/rahman-wardantz">rahman-wardantz</a></p>
+</div>
+</body>
+</html>
