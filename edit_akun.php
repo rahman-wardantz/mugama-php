@@ -26,8 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Edit Akun</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="light">
-<div class="container" style="max-width:440px;">
+<body class="light" style="background:url('https://i.ibb.co.com/Q3dpY15c/animegirl-mu.png') center/cover no-repeat fixed, linear-gradient(135deg, #e3f2fd 0%, #fff 100%);min-height:100vh;">
+<div class="container" style="max-width:440px;backdrop-filter:blur(2px);background:rgba(255,255,255,0.96);box-shadow:0 4px 24px rgba(25,118,210,0.12),0 1.5px 6px #ccc;">
+    <img src="https://i.ibb.co.com/4wgzqjLh/SMP-Muh-logo-removebg-preview.png" alt="Logo" width="90" style="margin-bottom:10px;box-shadow:0 2px 8px #90caf9;border-radius:10px;">
     <h2 style="color:#1976d2;">Edit Akun</h2>
     <div style="background:#e3f2fd;padding:18px 16px;border-radius:12px;box-shadow:0 2px 8px #90caf9;">
     <form method="post" style="text-align:left;">

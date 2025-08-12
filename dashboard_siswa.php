@@ -20,8 +20,9 @@ $isi = mysqli_fetch_assoc($cek);
     <title>Jurnal Harian Siswa</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="light">
-<div class="container" style="max-width:480px;">
+<body class="light" style="background:url('https://i.ibb.co.com/Q3dpY15c/animegirl-mu.png') center/cover no-repeat fixed, linear-gradient(135deg, #e3f2fd 0%, #fff 100%);min-height:100vh;">
+<div class="container" style="max-width:480px;backdrop-filter:blur(2px);background:rgba(255,255,255,0.96);box-shadow:0 4px 24px rgba(25,118,210,0.12),0 1.5px 6px #ccc;">
+    <img src="https://i.ibb.co.com/4wgzqjLh/SMP-Muh-logo-removebg-preview.png" alt="Logo" width="90" style="margin-bottom:10px;box-shadow:0 2px 8px #90caf9;border-radius:10px;">
     <h2 style="color:#1976d2;">Jurnal Harian Siswa</h2>
     <p style="margin-bottom:2px;">Senin, <?= date('d F Y') ?></p>
     <p style="margin-bottom:10px;">Halo, <b><?= htmlspecialchars($nama) ?></b> Kelas <b><?= htmlspecialchars($kelas) ?></b> | <a href="logout.php" style="color:#d32f2f;font-weight:500;">Logout</a></p>

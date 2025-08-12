@@ -15,8 +15,9 @@ $users = mysqli_query($conn, "SELECT * FROM users");
     <title>Admin Panel - Jurnal Kebiasaan Anak Sehat</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="light">
-<div class="container">
+<body class="light" style="background:url('https://i.ibb.co.com/Q3dpY15c/animegirl-mu.png') center/cover no-repeat fixed, linear-gradient(135deg, #e3f2fd 0%, #fff 100%);min-height:100vh;">
+<div class="container" style="max-width:900px;backdrop-filter:blur(2px);background:rgba(255,255,255,0.96);box-shadow:0 4px 24px rgba(25,118,210,0.12),0 1.5px 6px #ccc;">
+    <img src="https://i.ibb.co.com/4wgzqjLh/SMP-Muh-logo-removebg-preview.png" alt="Logo" width="90" style="margin-bottom:10px;box-shadow:0 2px 8px #90caf9;border-radius:10px;">
     <h2 style="color:#1976d2;">Panel Admin</h2>
     <a href="logout.php" style="float:right;color:#d32f2f;font-weight:500;">Logout</a>
     <div style="margin-bottom:24px;margin-top:8px;padding:18px 16px;background:#e3f2fd;border-radius:12px;box-shadow:0 2px 8px #90caf9;">
