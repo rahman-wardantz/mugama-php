@@ -16,8 +16,8 @@ $jurnal = mysqli_query($conn, "SELECT * FROM jurnal WHERE siswa_id=$siswa_id ORD
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="light" style="background:url('https://i.ibb.co.com/Q3dpY15c/animegirl-mu.png') center/cover no-repeat fixed, linear-gradient(135deg, #e3f2fd 0%, #fff 100%);min-height:100vh;">
-<div class="container" style="max-width:900px;backdrop-filter:blur(2px);background:rgba(255,255,255,0.96);box-shadow:0 4px 24px rgba(25,118,210,0.12),0 1.5px 6px #ccc;">
-    <img src="https://i.ibb.co.com/4wgzqjLh/SMP-Muh-logo-removebg-preview.png" alt="Logo" width="90" style="margin-bottom:10px;box-shadow:0 2px 8px #90caf9;border-radius:10px;">
+<div class="container">
+    <img src="https://i.ibb.co.com/4wgzqjLh/SMP-Muh-logo-removebg-preview.png" alt="Logo" class="logo">
     <h2 style="color:#1976d2;">Riwayat Jurnal Siswa</h2>
     <a href="dashboard_siswa.php" style="color:#1976d2;font-weight:500;">&larr; Kembali</a>
     <div style="background:#e3f2fd;padding:18px 16px;border-radius:12px;box-shadow:0 2px 8px #90caf9;margin-bottom:18px;">
